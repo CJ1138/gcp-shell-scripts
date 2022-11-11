@@ -8,10 +8,13 @@
 #
 # Creates a public Google Cloud Storage bucket 
 
+set -euo pipefail
+
+project=$(gcloud config get-value project)
 
 gsutil mb gs://$1
 
 
 gsutil iam ch allUsers:objectViewer gs://$1
-echo "Bucket created sucessfully!"
+echo "Bucket created sucessfully in project $project!"
 echo "Public URL: https://storage.googleapis.com/$1"

@@ -8,6 +8,8 @@
 #
 # Deletes all GSC buckets in a GCP project
 
+set -euo pipefail
+
 ProjectId=$(gcloud config get-value project)
 
 echo "You are about to delete all buckets in project ID: $ProjectId. Type YES to proceed:"
